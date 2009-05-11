@@ -25,7 +25,8 @@ my %nickservs = (
 	free         => [ 'NickServ', 'NickServ@services.' ],
 	krono        => [ 'NickServ', 'services@krono.net' ],
 	wikked       => [ 'NickServ', 'services@wikkedwire.com' ],
-	arcemu       => [ 'NickServ', 'NickServ@arcemu.info' ]
+	arcemu       => [ 'NickServ', 'NickServ@arcemu.info' ],
+	finalg       => [ 'NickServ', 'services@services.finalgear.com' ]
 );
 
 use Irssi;
