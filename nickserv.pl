@@ -85,7 +85,7 @@ sub got_nickserv_msg {
 			Irssi::signal_stop();
 		} elsif ($text =~ /nick, type.+msg NickServ IDENTIFY.+password.+Otherwise,|please choose a different nick./i) {
 			Irssi::signal_stop();
-		} elsif ($text =~ /Password accepted/) {
+		} elsif ($text =~ /(Password accepted|You are now identified)/) {
 			Irssi::print("Got a positive response from $nick/" . $server->{'tag'});
 			join_channels($server);
 			Irssi::signal_stop();
