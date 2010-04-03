@@ -26,6 +26,7 @@ my %nickservs = (
 	krono        => [ 'NickServ', 'services@krono.net' ],
 	wikked       => [ 'NickServ', 'services@wikkedwire.com' ],
 	arcemu       => [ 'NickServ', 'NickServ@arcemu.info' ],
+	realms       => [ 'NickServ', 'Services@EpicVoyage.org' ],
 	finalg       => [ 'NickServ', 'services@services.finalgear.com' ]
 );
 
