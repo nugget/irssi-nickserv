@@ -19,7 +19,7 @@ my @users = ();
 my @chans = ();
 my %nickservs = ( 
 	openprojects => [ 'nickserv', 's@NickServ' ],
-	cuckoonet    => [ 'NickServ', 'services@irc.cuckoo.com' ],
+	cuckoonet    => [ 'NickServ', 'NickServ@irc.cuckoo.com' ],
 	slashnet     => [ 'NickServ', 'services@services.slashnet.org' ],
 	roxnet       => [ 'NickServ', 'services@ircsystems.net' ],
 	free         => [ 'NickServ', 'NickServ@services.' ],
@@ -27,7 +27,8 @@ my %nickservs = (
 	wikked       => [ 'NickServ', 'services@wikkedwire.com' ],
 	arcemu       => [ 'NickServ', 'NickServ@arcemu.info' ],
 	realms       => [ 'NickServ', 'Services@EpicVoyage.org' ],
-	finalg       => [ 'NickServ', 'services@services.finalgear.com' ]
+	unreal       => [ 'NickServ', 'services@unrealircd.org' ],
+	finalg       => [ 'NickServ', 'NickServ@services.irc.finalgear.com' ]
 );
 
 use Irssi;
@@ -71,6 +72,10 @@ sub got_nickserv_msg {
 		if ($text =~ /This nickname is registered and protected./i) {
 			Irssi::print("got authrequest from $nick/" . $server->{'tag'});
 			$server->send_message($nick, "IDENTIFY $password",1);
+			Irssi::signal_stop();
+		} elsif ($text=~ /This nickname is registered/i) {
+			Irssi::print("got auththreat from $nick/" . $server->{'tag'});
+			$server->send_message($nick, "IDENTIFY $password", 1);
 			Irssi::signal_stop();
 		} elsif ($text=~ /If you do not change within one minute/i) {
 			Irssi::print("got auththreat from $nick/" . $server->{'tag'});
