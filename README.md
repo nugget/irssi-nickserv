@@ -13,3 +13,10 @@ Additionally, you can define a list of channels which your client will join
 only after it has successfully identified with NickServ.  Autojoins can often
 fail if a channel is set as protected or set to block unregistered users from
 joining.  By deferring the join until post-NickServ we handily sidestep this.
+
+## Installation ##
+
+1. Place `nickserv.pl` in `~/.irssi/scripts`
+2. Place `nickserv.channels` and `nickserv.users` in `~/.irssi/`
+3. Edit the channels and users files to taste (add your nick and passwords and
+   channels)
