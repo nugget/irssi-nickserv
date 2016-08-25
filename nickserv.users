@@ -1,0 +1,6 @@
+# all other than passwords are case insensitive
+#
+# Nick          IrcNet Tag      Password
+# --------      ----------      --------
+NICKNAME		slashn			PASSWORD
+NICKNAME		freend			PASSWORD
