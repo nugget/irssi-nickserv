@@ -1,6 +1,4 @@
 #
-# $Id: nickserv.pl,v 1.15 2008/07/07 20:06:14 nugget Exp $
-#
 # NickServ interface
 #  Original code by Sami Haahtinen / ZaNaGa 
 #  Protected channel support added by David McNett <nugget@slacker.com>
@@ -8,11 +6,6 @@
 
 use strict;
 
-my $cvsid = '$Id: nickserv.pl,v 1.15 2008/07/07 20:06:14 nugget Exp $';
-my $version = '?';
-if( $cvsid =~ /\$Id: [^ ]+ (\d+\.\d+)/ ) {
-	$version = $1;
-}
 my $nickserv_passfile = glob "~/.irssi/nickserv.users";
 my $nickserv_chanfile = glob "~/.irssi/nickserv.channels";
 my @users = ();
@@ -31,8 +24,18 @@ my %nickservs = (
 	finalg       => [ 'NickServ', 'NickServ@services.irc.finalgear.com' ]
 );
 
+use vars qw($VERSION %IRSSI);
+
 use Irssi;
-use Irssi::Irc;
+
+our $VERSION = '2.00';
+our %IRSSI = (
+	authors		=> 'David McNett',
+	contact		=> 'nugget@macnugget.org',
+	name		=> 'NickServ Automation',
+	description	=> 'Automates identification with ircservices on multiple networks.',
+	license		=> 'Public Domain'
+);
 
 sub join_channels {
 	my ($server) = @_;
@@ -237,4 +240,4 @@ Irssi::signal_add("event notice", "event_nickserv_message");
 Irssi::command_bind('nickserv_read', 'read_files');
 
 read_files();
-Irssi::print("Nickserv Interface $version loaded...");
+Irssi::print("Nickserv Interface $VERSION loaded...");

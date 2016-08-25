@@ -20,6 +20,11 @@ joining.  By deferring the join until post-NickServ we handily sidestep this.
 2. Place `nickserv.channels` and `nickserv.users` in `~/.irssi/`
 3. Edit the channels and users files to taste (add your nick and passwords and
    channels)
+4. If you require a script be run when Irssi starts, you can place the file (or
+   better, create a symlink to it) into `~/.irssi/scripts/autorun/`
+   Alternatively, if you want more control over the order in which scripts are
+   autoloaded, you can place:
+   `/SCRIPT LOAD nickserv.pl` in your `~/.irssi/startup` file.
 
 ## Credits ##
 
