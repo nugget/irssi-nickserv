@@ -20,3 +20,8 @@ joining.  By deferring the join until post-NickServ we handily sidestep this.
 2. Place `nickserv.channels` and `nickserv.users` in `~/.irssi/`
 3. Edit the channels and users files to taste (add your nick and passwords and
    channels)
+
+## Credits ##
+
+The original code was writen by Sami Haahtinen / ZaNaGa
+The protected channel support was added by David McNett / Nugget
